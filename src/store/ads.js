@@ -25,32 +25,32 @@ export default {
     ]
   },
   mutations: {
-    createAd (state, payload) {
+    createAd(state, payload) {
       state.ads.push(payload)
     }
   },
   actions: {
-    createAd ({commit}, payload) {
+    createAd({ commit }, payload) {
       payload.id = '777'
 
       commit('createAd', payload)
     }
   },
   getters: {
-    ads (state) {
+    ads(state) {
       return state.ads
     },
-    promoAds (state) {
-      return state.ads.filter(ad => {
+    promoAds(state) {
+      return state.ads.filter((ad) => {
         return ad.promo
       })
     },
-    myAds (state) {
+    myAds(state) {
       return state.ads
     },
-    adById (state) {
-      return adId => {
-        return state.ads.find(ad => ad.id === adId)
+    adById(state) {
+      return (adId) => {
+        return state.ads.find((ad) => ad.id === adId)
       }
     }
   }

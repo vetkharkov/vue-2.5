@@ -18,7 +18,8 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" @click="onSubmit" :loading="loading" :disabled="!valid || loading">Create account!</v-btn>
+            <v-btn color="primary" @click="onSubmit" :loading="loading" :disabled="!valid || loading">Create
+              account!</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -30,7 +31,7 @@
 const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
 
 export default {
-  data () {
+  data() {
     return {
       email: '',
       password: '',
@@ -51,12 +52,12 @@ export default {
     }
   },
   computed: {
-      loading () {
-        return this.$store.getters.loading
-      }
-    },
+    loading() {
+      return this.$store.getters.loading
+    }
+  },
   methods: {
-    onSubmit () {
+    onSubmit() {
       if (this.$refs.form.validate()) {
         const user = {
           email: this.email,
@@ -66,7 +67,7 @@ export default {
           .then(() => {
             this.$router.push('/')
           })
-          .catch(err => console.log(err))
+          .catch(() => {})
       }
     }
   }

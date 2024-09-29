@@ -1,7 +1,7 @@
 import * as fb from 'firebase'
 
 class User {
-  constructor (id) {
+  constructor(id) {
     this.id = id
   }
 }
@@ -11,16 +11,18 @@ export default {
     user: null
   },
   mutations: {
-    setUser (state, payload) {
+    setUser(state, payload) {
       state.user = payload
     }
   },
   actions: {
-    async registerUser ({commit}, {email, password}) {
+    async registerUser({ commit }, { email, password }) {
       commit('clearError')
       commit('setLoading', true)
       try {
-        const user = await fb.auth().createUserWithEmailAndPassword(email, password)
+        const user = await fb
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
         commit('setUser', new User(user.uid))
         commit('setLoading', false)
       } catch (error) {
@@ -29,7 +31,7 @@ export default {
         throw error
       }
     },
-    async loginUser ({commit}, {email, password}) {
+    async loginUser({ commit }, { email, password }) {
       commit('clearError')
       commit('setLoading', true)
       try {
@@ -44,7 +46,7 @@ export default {
     }
   },
   getters: {
-    user (state) {
+    user(state) {
       return state.user
     }
   }

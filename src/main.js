@@ -17,7 +17,7 @@ new Vue({
   store: store,
   components: { App },
   template: '<App/>',
-  created () {
+  created() {
     initializeApp({
       apiKey: 'AIzaSyDmAQU6EaqDNK-bVOeCwmxDoSTBsMzPW_8',
       authDomain: 'it-project-1c93c.firebaseapp.com',

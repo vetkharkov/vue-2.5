@@ -3,13 +3,10 @@
     <v-layout row>
       <v-flex xs12>
         <v-card>
-          <v-card-media
-            :src="ad.imageSrc"
-            height="300px"
-          ></v-card-media>
+          <v-card-media :src="ad.imageSrc" height="300px"></v-card-media>
           <v-card-text>
-            <h1 class="text--primary">{{ad.title}}</h1>
-            <p>{{ad.description}}</p>
+            <h1 class="text--primary">{{ ad.title }}</h1>
+            <p>{{ ad.description }}</p>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -23,13 +20,13 @@
 </template>
 
 <script>
-  export default {
-    props: ['id'],
-    computed: {
-      ad () {
-        const id = this.id
-        return this.$store.getters.adById(id)
-      }
+export default {
+  props: ['id'],
+  computed: {
+    ad() {
+      const id = this.id
+      return this.$store.getters.adById(id)
     }
   }
+}
 </script>

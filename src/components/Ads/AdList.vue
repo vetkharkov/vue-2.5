@@ -27,11 +27,11 @@
 </template>
 
 <script>
-  export default {
-    computed: {
-      myAds () {
-        return this.$store.getters.myAds
-      }
+export default {
+  computed: {
+    myAds() {
+      return this.$store.getters.myAds
     }
   }
+}
 </script>
