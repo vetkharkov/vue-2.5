@@ -7,8 +7,21 @@ import BuyModalComponent from '@/components/Shared/BuyModal'
 // import { initializeApp } from 'firebase/app'
 import * as firebase from 'firebase/app'
 import 'vuetify/dist/vuetify.min.css'
+import colors from 'vuetify/es5/util/colors'
 
-Vue.use(Vuetify)
+Vue.use(Vuetify, {
+  theme: {
+    primary: colors.purple.darken1,
+    secondary: '#9575CD',
+    accent: '#9c27b0',
+    error: '#f44336',
+    warning: '#3949AB',
+    info: '#2196f3',
+    success: '#4caf50'
+  }
+})
+
+// Vue.use(Vuetify)
 Vue.component('app-buy-modal', BuyModalComponent)
 Vue.config.productionTip = false
 
